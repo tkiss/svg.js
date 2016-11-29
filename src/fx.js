@@ -246,6 +246,10 @@ SVG.FX = SVG.invent({
           s.attrs[i].r = color.r
           s.attrs[i].g = color.g
           s.attrs[i].b = color.b
+        }else if(s.attrs[i] instanceof SVG.Number){
+          var number = new SVG.Number(this.target().attr(i))
+          s.attrs[i].value = number.valueOf()
+          s.attrs[i].unit = number.unit
         }else{
           s.attrs[i].value = this.target().attr(i)// + s.attrs[i].value
         }
